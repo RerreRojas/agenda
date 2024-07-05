@@ -35,7 +35,6 @@ export default {
 <style>
 #app {
   font-family: Arial, sans-serif;
-  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
 }

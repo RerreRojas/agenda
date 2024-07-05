@@ -32,15 +32,16 @@ export default {
 
 <style scoped>
 .baja {
-  background-color: lightgreen;
+  background-color: #aeff2f;
 }
 
 .media {
-  background-color: lightyellow;
+  background-color: #ffff00;
 }
 
 .alta {
-  background-color: lightcoral;
+  background-color: #fe0100;
+  color: white;
 }
 #warning{color: red;}
 
