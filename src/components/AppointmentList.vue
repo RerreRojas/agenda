@@ -1,0 +1,65 @@
+<template>
+  <div class="lista-card">
+    <div v-for="(cita, index) in citas" :key="index" class="cita-card" :class="cita.gravedad.toLowerCase()">
+      <AppointmentCard :cita="cita" @eliminar="eliminarCita(index)" />
+    </div>
+    <p id="warning" v-if="citas.length === 0">Aún no hay citas registradas.</p>
+  </div>
+</template>
+
+<script>
+import AppointmentCard from './AppointmentCard.vue';
+
+export default {
+  components: {
+    AppointmentCard,
+  },
+  props: {
+    citas: {
+      type: Array,
+      required: true
+    }
+  },
+  methods: {
+    eliminarCita(index) {
+      const nuevasCitas = [...this.citas];
+      nuevasCitas.splice(index, 1);
+      this.$emit('eliminar', nuevasCitas);
+    }
+  }
+};
+</script>
+
+<style scoped>
+.baja {
+  background-color: lightgreen;
+}
+
+.media {
+  background-color: lightyellow;
+}
+
+.alta {
+  background-color: lightcoral;
+}
+#warning{color: red;}
+
+.cita-card {
+  margin: 10px;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  
+}
+.lista-card{display: flex;
+  flex-direction: row ;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+
+  
+  }
+</style>
