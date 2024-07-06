@@ -3,40 +3,40 @@
     <form @submit.prevent="agregarCita" class="formulario-citas">
       <div class="form-completo">
         <div class="form-row">
-        <div class="form-group">
-          <label :class="{ 'rojo': !paciente }">Paciente</label>
-          <input type="text" v-model="paciente" required>
+          <div class="form-group">
+            <label :class="{ 'rojo': !paciente }">Paciente</label>
+            <input type="text" v-model="paciente" required>
+          </div>
+          <div class="form-group">
+            <label :class="{ 'rojo': !fecha }">Fecha</label>
+            <input type="date" v-model="fecha" required>
+          </div>
+          <div class="form-group">
+            <label :class="{ 'rojo': !hora }">Hora</label>
+            <input type="time" v-model="hora" required>
+          </div>
+          <div class="form-group">
+            <label :class="{ 'rojo': !gravedad }">Gravedad</label>
+            <select v-model="gravedad" required>
+              <option value="">Seleccionar</option>
+              <option value="Baja">Baja</option>
+              <option value="Media">Media</option>
+              <option value="Alta">Alta</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label :class="{ 'rojo': !motivo }">Motivo</label>
+            <input type="text" v-model="motivo" required>
+          </div>
         </div>
-        <div class="form-group">
-          <label :class="{ 'rojo': !fecha }">Fecha</label>
-          <input type="date" v-model="fecha" required>
-        </div>
-        <div class="form-group">
-          <label :class="{ 'rojo': !hora }">Hora</label>
-          <input type="time" v-model="hora" required>
-        </div>
-        <div class="form-group">
-          <label :class="{ 'rojo': !gravedad }">Gravedad</label>
-          <select v-model="gravedad" required>
-            <option value="">Seleccionar</option>
-            <option value="Baja">Baja</option>
-            <option value="Media">Media</option>
-            <option value="Alta">Alta</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label :class="{ 'rojo': !motivo }">Motivo</label>
-          <input type="text" v-model="motivo" required>
+        <div class="py-3">
+
+          <button class="btn  btn-dark my-3" type="submit" :disabled="!formularioCompleto">Agregar</button>
+
         </div>
       </div>
-      <div class="position-relative">
-        <div class="btn position-absolute top-50 start-50">
-          <button  type="submit" :disabled="!formularioCompleto">Agregar</button>
-        </div>
-      </div>
-      </div>
-      
-      
+
+
 
     </form>
   </main>
@@ -96,7 +96,10 @@ export default {
 </script>
 
 <style scoped>
-.form-completo{height: 10rem;}
+.form-completo {
+  height: 10rem;
+}
+
 .formulario-citas {
   border: 1px solid #ddd;
   border-radius: 0.5rem;
@@ -139,25 +142,7 @@ label {
   text-align: center;
 }
 
-.btn {
-  margin-top: 1rem;
-}
 
-button[type="submit"] {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 0.25rem;
-  background-color: #333;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-
-
-}
-
-button[type="submit"]:disabled {
-  background-color: #aaa;
-}
 
 .rojo {
   color: red;
