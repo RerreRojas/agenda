@@ -1,24 +1,25 @@
-# agenda
+# Agenda tu hora al médico
 
-## Project setup
-```
-npm install
-```
+## Descripción
+Este proyecto es un administrador de citas médicas desarrollado con Vue.js. Permite a los usuarios agregar y eliminar citas mediante un formulario interactivo y una lista de citas.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Estructura del Proyecto
+El proyecto está compuesto por los siguientes archivos principales:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+* App.vue: Componente principal que maneja el estado y la lógica de las citas.
+* AppointmentForm.vue: Componente de formulario para agregar nuevas citas.
+* AppointmentList.vue: Componente para listar y eliminar citas.
+* AppointmentCard.vue Componente que contiene las cards
 
-### Lints and fixes files
-```
-npm run lint
-```
+### App.vue
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Este es el archivo principal del proyecto. Se encarga de mantener el estado global de las citas y de coordinar los componentes secundarios.
+
+### AppointmentForm.vue
+
+Este componente contiene el formulario para agregar nuevas citas. Emite un evento agregar con los datos de la nueva cita cuando se envía el formulario.
+
+### AppointmentList.vue
+
+Este componente se encarga de mostrar la lista de citas y proporcionar la funcionalidad para eliminarlas. Cada cita se muestra con sus detalles y un botón para eliminarla.
+
